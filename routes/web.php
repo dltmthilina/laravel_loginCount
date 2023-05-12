@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,8 @@ Route::get('/user', function(){
   
     return view('userdashboard');
 });
+
+Route::get('/pdf/download', [PDFController::class, 'download']);
 
 
 

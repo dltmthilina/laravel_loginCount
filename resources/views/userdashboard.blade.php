@@ -28,7 +28,7 @@
             </ul>
           </nav>
           <section>
-            
+            <a href="/pdf/download">Download PDF</a>
         
           </section> 
     </body>
