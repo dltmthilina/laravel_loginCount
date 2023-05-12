@@ -16,26 +16,27 @@
     <body>
       
         <div  class="loginpage">
+         
             <header>
                 <h1>Login Page</h1>
               </header>
-            <form >
-               
+            <form method="POST" action="/">
+                @csrf
                 <div class="inputbox">
                     <label for="name" > Name</label>
-                    <input type="text" id="name">
+                    <input required type="text" name="name">
                 </div>
                 <div class="inputbox">
                     <label for="name" >NIC</label>
-                    <input type="text" id="nic">
+                    <input  type="text" name="nic">
                 </div>
                 <div class="inputbox">
                     <label for="name" >Phone Number</label>
-                    <input type="text" id="contact">
+                    <input  type="text" name="contact">
                 </div>
                 <div class="inputbox">
                     <label for="name" >Password</label>
-                    <input type="text" id="password">
+                    <input required type="text" name="password">
                 </div>
                 <input type="submit" value="Log In">
             </form>

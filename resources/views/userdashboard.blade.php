@@ -15,7 +15,7 @@
 
     <body>
         <header>
-            <h1>User Dashboard</h1>
+            <h1>{{ session('name') }}</h1>
           </header>
           <nav>
             <ul>
