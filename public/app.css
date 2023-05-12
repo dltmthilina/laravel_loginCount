@@ -1,0 +1,62 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+
+.loginpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputbox{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+   
+}
+
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    top: 5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #fff;
+    color: #333;
+  }
+
