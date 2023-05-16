@@ -45,7 +45,7 @@ body {
     color: #fff;
   }
   
-  section {
+  .etg {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -71,3 +71,5 @@ body {
   .card p {
     margin-bottom: 0;
   }
+
+  

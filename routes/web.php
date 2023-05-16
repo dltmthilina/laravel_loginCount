@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
@@ -23,11 +24,16 @@ Route::get('/', function () {
 Route::post('/', [LoginController::class, 'login']);
 
 Route::get('/user', function(){
-  
     return view('userdashboard');
-});
+}); 
+
+Route::get('/admin', function(){
+    return view('admin');
+}); 
 
 Route::get('/pdf/download', [PDFController::class, 'download']);
+
+Route::get('/admin/create_user', [AdminController::class, 'createUser']);
 
 
 
