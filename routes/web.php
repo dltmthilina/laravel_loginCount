@@ -34,6 +34,7 @@ Route::get('/admin', function(){
 Route::get('/pdf/download', [PDFController::class, 'download']);
 
 Route::get('/admin/create_user', [AdminController::class, 'createUser']);
+Route::post('/admin/create_user', [AdminController::class, 'storeUser']);
 
 
 

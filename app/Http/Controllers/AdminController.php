@@ -13,10 +13,16 @@ class AdminController extends Controller
    }
 
    public function storeUser(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'nic' => 'required',
+            'message' => 'required',
+        ]);
         $formData = new User();
-        $formData->name = $request->input('name');
-        $formData->email = $request->input('nic');
-        $formData->message = $request->input('message');
+        $formData->name = $validatedData['name'];
+        $formData->nic = $validatedData['nic'];
+        $formData->contact = $validatedData['contact'];
+        $formData->password = $validatedData['password'];
         $formData->save();
    }
 }
