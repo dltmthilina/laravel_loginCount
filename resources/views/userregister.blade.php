@@ -3,7 +3,7 @@
 @section('content')
 <div  class="loginpage">
          
-    <form method="POST" action="/">
+    <form method="POST" action="/admin/create_user">
         @csrf
         <div class="inputbox">
             <label for="name" > Name</label>

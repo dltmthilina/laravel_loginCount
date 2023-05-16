@@ -16,13 +16,22 @@ class AdminController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'nic' => 'required',
-            'message' => 'required',
+            'contact' => 'required',
+            'password' => 'required',
+
         ]);
-        $formData = new User();
-        $formData->name = $validatedData['name'];
-        $formData->nic = $validatedData['nic'];
-        $formData->contact = $validatedData['contact'];
-        $formData->password = $validatedData['password'];
-        $formData->save();
+
+        try{
+            $formData = new User();
+            $formData->name = $validatedData['name'];
+            $formData->nic = $validatedData['nic'];
+            $formData->contact = $validatedData['contact'];
+            $formData->password = $validatedData['password'];
+            $formData->save();
+            return response()->json(['message' => 'Data saved successfully!']);
+        }catch(\Exception $error){
+            return response()->json(['message' => 'Data not saved!']);
+        }
+        
    }
 }
