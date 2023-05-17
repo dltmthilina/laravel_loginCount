@@ -12,7 +12,7 @@ class ClickCount extends Model
 
     protected $fillable = [
         'linkId',
-        'username',
+        'userId',
         'click_count',
     ];
 }

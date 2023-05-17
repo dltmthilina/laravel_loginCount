@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('download_counts', function (Blueprint $table) {
             $table->id();
-            $table->string('username', 64);
+            $table->string('userId', 64);
             $table->integer('click_count')->default(0);
             $table->timestamps();
         });
