@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -18,8 +19,8 @@ class AdminController extends Controller
             'nic' => 'required',
             'contact' => 'required',
             'password' => 'required',
-
         ]);
+        
 
         try{
             $formData = new User();
@@ -27,6 +28,7 @@ class AdminController extends Controller
             $formData->nic = $validatedData['nic'];
             $formData->contact = $validatedData['contact'];
             $formData->password = $validatedData['password'];
+            $formData->password = Hash::make($validatedData['password']);
             $formData->save();
             return response()->json(['message' => 'Data saved successfully!']);
         }catch(\Exception $error){

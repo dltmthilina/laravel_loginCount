@@ -25,14 +25,13 @@ Route::post('/', [LoginController::class, 'login']);
 
 Route::get('/user', function(){
     return view('userdashboard');
-}); 
+})->middleware('auth');
 
 Route::get('/admin', function(){
     return view('admin');
 }); 
 
 Route::get('/pdf/download', [PDFController::class, 'download']);
-
 Route::get('/admin/create_user', [AdminController::class, 'createUser']);
 Route::post('/admin/create_user', [AdminController::class, 'storeUser']);
 

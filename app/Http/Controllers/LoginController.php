@@ -5,29 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
     public function login(Request $request){
-            
-
-        if($request->isMethod('post')) {
-
-            if ($request->all()) {
-                // the request contains data
-                $data = [
-                    'name' => $request->input('name'),
-                    'password' => $request->input('password'),
-
-                ];
-
-                return redirect('/user')->with($data);
-            } else {
-                // the request does not contain data
-                return redirect('/')->with('error', 'No data provided');
+        $credentials = $request->only('name', 'password');
+        
+     
+         try{
+            if(Auth::attempt($credentials)){
+                return redirect()->intended('/user');
+            }else{
+                return response()->json(['message' => 'Invalid credentials']);
             }
-              
-        }
-       
+        }catch(\Exception $error){
+            return response()->json(['message' => 'Please enter valid data!']);
+        } 
+
     }
 }
