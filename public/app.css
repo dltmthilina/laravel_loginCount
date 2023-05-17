@@ -1,14 +1,15 @@
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-  
+*{
+  margin: 0;
+}
+
+
   h1 {
     margin: 0;
   }
 
 .loginpage{
+  height: 100vh;
+  background: #508bfc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,6 +19,7 @@ header {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
+    width: 100%;
    
 }
 
@@ -25,36 +27,37 @@ form{
     position: relative;
     display: flex;
     flex-direction: column;
-    width:50%;
+    align-items: center;
     top: 5rem;
+    background-color: aliceblue;
+    padding: 2rem;
     border-radius: 5px;
-    margin: 20px auto;
+    width: 40%;
+   
 }
-
-
 
 input[type="text"],
 input[type="password"] {
-  width: 100%;
-  padding: 10px;
   margin-bottom: 20px;
   border: none;
   border-radius: 5px;
+  padding: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 input[type="submit"] {
-    background-color: #333;
+    background-color: #6893e4;
     color: #fff;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    width: 100%;
   }
   
   input[type="submit"]:hover {
     background-color: #fff;
-    color: #333;
+    color: #6893e4;
   }
 
