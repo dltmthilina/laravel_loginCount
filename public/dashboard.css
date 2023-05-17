@@ -31,7 +31,7 @@ body {
     margin-right: 10px;
   }
   
-  a {
+  a  {
     color: #333;
     text-decoration: none;
     font-weight: bold;
@@ -70,6 +70,15 @@ body {
   
   .card p {
     margin-bottom: 0;
+  }
+
+button {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
   }
 
   

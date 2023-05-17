@@ -15,7 +15,9 @@ class LoginController extends Controller
      
          try{
             if(Auth::attempt($credentials)){
-                return redirect()->intended('/user');
+                $userId = Auth::id(); 
+                session(['userId' => $userId]);
+                return redirect()->intended('/user/'.$userId);
             }else{
                 return response()->json(['message' => 'Invalid credentials']);
             }

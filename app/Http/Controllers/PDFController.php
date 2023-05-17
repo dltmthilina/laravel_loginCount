@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClickCount;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Exception;
@@ -15,18 +16,32 @@ class PDFController extends Controller
     
     public function download(){
 
+        $userId = session('userId');
+        
      try{
         $dompdf = new Dompdf();
         $dompdf->loadHtml('<h1>Hello, World!</h1>');
         $dompdf->setPaper('A4', 'landscape');
         $dompdf->render();
         $dompdf->stream();
+        
+        /* $clickCount = new ClickCount();
+        $clickCount-> username = $userId;
+        $clickCount-> click_count = $userId; */
 
+        $click = ClickCount::updateOrCreate(
+            ['username' => $userId],
+            ['click_count' => \DB::raw('click_count + 1')]
+        );
+
+        $click->save();
+        
         }catch(Exception $e){
-            Log::error($e->getMessage());
             
             // Return an error response
             return response()->json(['error' => 'PDF generation failed'], 500);
         }
     }
+
+    
 }

@@ -10,7 +10,6 @@
         
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="/dashboard.css" rel="stylesheet" />
-
     </head>
 
     <body>
@@ -28,7 +27,10 @@
             </ul>
           </nav>
           <section>
-            <a href="/pdf/download">Download PDF</a>
+            <form method="POST" action="/pdf/download">
+              @csrf
+              <button type="submit">Download PDF</button>
+          </form>
         
           </section> 
     </body>
