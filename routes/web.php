@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::post('/', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/user/{id}', function(){
     return view('userdashboard');
 })->middleware('auth');

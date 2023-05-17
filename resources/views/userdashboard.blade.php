@@ -23,7 +23,7 @@
               <li><a href="#">Settings</a></li>
             </ul>
             <ul>
-              <li><a href="#">Log Out</a></li>
+              <li><a href="/logout">Log Out</a></li>
             </ul>
           </nav>
           <section>

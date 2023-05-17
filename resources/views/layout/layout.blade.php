@@ -26,7 +26,7 @@
               <li><a href="/admin/create_user">Create User</a></li>
             </ul>
             <ul>
-              <li><a href="/admin/create_user">Log Out</a></li>
+              <li><a href="/logout">Log Out</a></li>
             </ul>
           </nav>
           <section class="content">
