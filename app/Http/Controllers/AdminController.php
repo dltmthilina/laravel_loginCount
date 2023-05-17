@@ -30,7 +30,7 @@ class AdminController extends Controller
             $formData->password = $validatedData['password'];
             $formData->password = Hash::make($validatedData['password']);
             $formData->save();
-            return response()->json(['message' => 'Data saved successfully!']);
+            return redirect('/admin/create_user');
         }catch(\Exception $error){
             return response()->json(['message' => 'Data not saved!']);
         }
