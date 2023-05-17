@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -15,9 +15,22 @@ class LoginController extends Controller
      
          try{
             if(Auth::attempt($credentials)){
-                $userId = Auth::id(); 
+                $user = Auth::user();
+                $userId = $user->id;
+                $name = $user->name; 
+                $isAdmin = $user->isAdmin; 
                 session(['userId' => $userId]);
-                return redirect()->intended('/user/'.$userId);
+                Session::put([
+                    'userId' => $userId,
+                    'name' => $name,  
+                ]);
+
+                if($isAdmin){
+                    return redirect()->intended('/admin');
+                }else{
+                    return redirect()->intended('/user/'.$userId);
+                }
+               
             }else{
                 return response()->json(['message' => 'Invalid credentials']);
             }
@@ -25,5 +38,10 @@ class LoginController extends Controller
             return response()->json(['message' => 'Please enter valid data!']);
         } 
 
+    }
+
+    public function logout(){
+        
+        return redirect('/');
     }
 }
