@@ -11,7 +11,6 @@ class ClickCount extends Model
     use HasFactory;
 
     protected $fillable = [
-        'linkId',
         'userId',
         'click_count',
     ];

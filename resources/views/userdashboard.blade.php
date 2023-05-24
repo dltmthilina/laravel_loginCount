@@ -14,7 +14,7 @@
 
     <body>
         <header>
-            <h1>{{ session('name') }}</h1>
+            <h1>{{ session('userName') }}</h1>
           </header>
           <nav>
             <ul>

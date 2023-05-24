@@ -32,7 +32,7 @@ Route::get('/admin', function(){
 }); 
 
 Route::post('/pdf/download', [PDFController::class, 'download']);
-
+Route::get('/admin/stats', [AdminController::class, 'getClickCounts']);
 Route::get('/admin/create_user', [AdminController::class, 'createUser']);
 Route::post('/admin/create_user', [AdminController::class, 'storeUser']);
 

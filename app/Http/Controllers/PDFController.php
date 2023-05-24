@@ -17,6 +17,8 @@ class PDFController extends Controller
     public function download(){
 
         $userId = session('userId');
+        $userName = session('userName');
+        print "$userId";
         
      try{
         $dompdf = new Dompdf();
@@ -25,11 +27,14 @@ class PDFController extends Controller
         $dompdf->render();
         $dompdf->stream();
         
+      
+
         /* $clickCount = new ClickCount();
         $clickCount-> username = $userId;
         $clickCount-> click_count = $userId; */
 
         $click = ClickCount::updateOrCreate(
+
             ['userId' => $userId],
             ['click_count' => \DB::raw('click_count + 1')]
         );

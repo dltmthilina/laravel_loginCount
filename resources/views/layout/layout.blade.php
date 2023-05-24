@@ -24,6 +24,7 @@
               <li><a href="#">Profile</a></li>
               <li><a href="#">Settings</a></li>
               <li><a href="/admin/create_user">Create User</a></li>
+              <li><a href="/admin/stats">Statistics</a></li>
             </ul>
             <ul>
               <li><a href="/logout">Log Out</a></li>

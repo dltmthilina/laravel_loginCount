@@ -19,10 +19,10 @@ class LoginController extends Controller
                 $userId = $user->id;
                 $name = $user->name; 
                 $isAdmin = $user->isAdmin; 
-                session(['userId' => $userId]);
+              
                 Session::put([
                     'userId' => $userId,
-                    'name' => $name,  
+                    'userName' => $name,  
                 ]);
 
                 if($isAdmin){
