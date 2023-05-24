@@ -17,7 +17,6 @@
     <body>
       
         <div  class="loginpage">
-         
             <form method="POST" action="/">
                 @csrf
                 <h1>Login Page</h1>
@@ -25,7 +24,7 @@
                     <label for="name" > Name</label>
                     <input required type="text" name="name">
                 </div>
-    
+
                 <div class="inputbox">
                     <label for="name" >Password</label>
                     <input required type="text" name="password">

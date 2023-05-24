@@ -21,7 +21,7 @@
             <label for="name" >Password</label>
             <input required type="text" name="password">
         </div>
-        <input type="submit" value="Register">
+        <input type="submit" value="Register User">
     </form>
 </div>
 @endsection

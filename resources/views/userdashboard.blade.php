@@ -26,12 +26,12 @@
               <li><a href="/logout">Log Out</a></li>
             </ul>
           </nav>
-          <section>
-            <form method="POST" action="/pdf/download">
-              @csrf
-              <button type="submit">Download PDF</button>
-          </form>
-        
-          </section> 
+
+            <section>
+              <form method="POST" action="/pdf/download">
+                @csrf
+                <button type="submit">Download PDF</button>
+              </form>
+            </section> 
     </body>
 </html>
