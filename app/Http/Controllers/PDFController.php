@@ -34,7 +34,7 @@ class PDFController extends Controller
         $clickCount-> click_count = $userId; */
 
         $click = ClickCount::updateOrCreate(
-
+            ['userName' => $userName],
             ['userId' => $userId],
             ['click_count' => \DB::raw('click_count + 1')]
         );
